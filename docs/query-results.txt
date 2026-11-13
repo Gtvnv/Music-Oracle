@@ -1,0 +1,51 @@
+track, artist, totalPlays
+"Get Lucky", "Daft Punk", 48
+"Kill Bill", "SZA", 45
+"Expresso 2222", "Gilberto Gil", 42
+"Time", "Pink Floyd", 42
+"Karma Police", "Radiohead", 40
+genre, avgRating, listeners, plays
+"MPB", 4.67, 2, 70
+"Jazz", 4.67, 1, 69
+"Soul", 4.5, 2, 23
+"Electronic", 4.2, 2, 121
+"Rock", 4.2, 2, 103
+"Psychedelic", 4.17, 4, 98
+"R&B", 4.0, 1, 88
+"Hip Hop", 3.67, 2, 37
+recommendation, score, recommendedBy
+"Expresso 2222", 2, ["Diego", "Felipe"]
+"Alright", 1, ["Diego"]
+"Kill Bill", 1, ["Emma"]
+"Money", 1, ["Felipe"]
+"Paranoid Android", 1, ["Felipe"]
+influenced, hops, chain
+"Radiohead", 1, ["Pink Floyd", "Radiohead"]
+"Tame Impala", 1, ["Pink Floyd", "Tame Impala"]
+artist, genres
+"Kendrick Lamar", ["R&B", "Hip Hop"]
+"Pink Floyd", ["Psychedelic", "Rock"]
+track, mainArtist, guest
+"Get Lucky", "Daft Punk", "Pharrell Williams"
+"Giorgio by Moroder", "Daft Punk", "Giorgio Moroder"
+"Instant Crush", "Daft Punk", "Julian Casablancas"
+"Tropicalia", "Caetano Veloso", "Gilberto Gil"
+suggestedArtist, because
+"Tame Impala", ["Pink Floyd"]
+listenerCountry, artistCountry, plays
+"BR", "FR", 121
+"BR", "US", 106
+"BR", "BR", 70
+"BR", "GB", 57
+"BR", "AU", 42
+"PT", "GB", 88
+"PT", "US", 7
+"US", "US", 104
+"US", "AU", 14
+user, hours
+"Ana", 12.7
+"Bruno", 9.6
+"Felipe", 9.5
+"Carla", 8.5
+"Emma", 6.4
+"Diego", 5.3

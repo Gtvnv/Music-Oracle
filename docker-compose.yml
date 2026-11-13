@@ -1,0 +1,38 @@
+services:
+  neo4j:
+    image: neo4j:5.26-community
+    container_name: music-oracle-neo4j
+    environment:
+      NEO4J_AUTH: ${NEO4J_USER}/${NEO4J_PASSWORD}
+    ports:
+      - "7474:7474"   # Neo4j Browser
+      - "7687:7687"   # Bolt
+    volumes:
+      - neo4j_data:/data
+      - ./data:/var/lib/neo4j/import   # CSVs read by LOAD CSV
+    healthcheck:
+      test: ["CMD-SHELL", "cypher-shell -u ${NEO4J_USER} -p ${NEO4J_PASSWORD} 'RETURN 1' || exit 1"]
+      interval: 5s
+      timeout: 10s
+      retries: 30
+
+  # Flyway-style versioned migrations for Neo4j (Neo4j-Migrations).
+  migrations:
+    build: ./tools/migrations
+    image: music-oracle/neo4j-migrations:4.2.2
+    container_name: music-oracle-migrations
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    volumes:
+      - ./migrations:/migrations:ro
+    command:
+      - --location=file:///migrations
+      - --address=bolt://neo4j:7687
+      - --username=${NEO4J_USER}
+      - --password=${NEO4J_PASSWORD}
+      - migrate
+
+volumes:
+  neo4j_data:
+

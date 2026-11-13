@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" font-family="Segoe UI, Arial, sans-serif" font-size="13">
+  <title>Music Oracle graph model</title>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect width="800" height="460" fill="#fafafa"/>
+
+  <!-- relationships -->
+  <g stroke="#444" stroke-width="1.5" fill="none" marker-end="url(#a)">
+    <line x1="207" y1="170" x2="333" y2="170"/>          <!-- RELEASED -->
+    <line x1="457" y1="170" x2="583" y2="170"/>          <!-- CONTAINS -->
+    <line x1="650" y1="227" x2="650" y2="333"/>          <!-- HAS_GENRE -->
+    <line x1="207" y1="355" x2="610" y2="222"/>          <!-- LISTENED -->
+    <line x1="150" y1="333" x2="150" y2="227"/>          <!-- FOLLOWS -->
+    <path d="M640 113 C 560 20, 240 20, 160 113"/>       <!-- FEATURES -->
+    <path d="M115 125 C 40 60, 90 40, 128 116"/>         <!-- INFLUENCED -->
+  </g>
+
+  <!-- nodes -->
+  <g stroke-width="2">
+    <circle cx="150" cy="170" r="57" fill="#ffd166" stroke="#c99a1e"/>
+    <circle cx="395" cy="170" r="57" fill="#8ecae6" stroke="#2a7fa8"/>
+    <circle cx="650" cy="170" r="57" fill="#95d5b2" stroke="#3a9a62"/>
+    <circle cx="650" cy="390" r="57" fill="#f4a6a6" stroke="#c45c5c"/>
+    <circle cx="150" cy="390" r="57" fill="#cdb4db" stroke="#8a62a6"/>
+  </g>
+  <g text-anchor="middle" font-weight="600">
+    <text x="150" y="167">Artist</text>
+    <text x="395" y="167">Album</text>
+    <text x="650" y="167">Track</text>
+    <text x="650" y="387">Genre</text>
+    <text x="150" y="387">User</text>
+  </g>
+  <g text-anchor="middle" font-size="11" fill="#333">
+    <text x="150" y="183">name, country</text>
+    <text x="150" y="196">formed</text>
+    <text x="395" y="183">title, year</text>
+    <text x="650" y="183">title</text>
+    <text x="650" y="196">durationSec</text>
+    <text x="650" y="403">name</text>
+    <text x="150" y="403">name, country</text>
+  </g>
+
+  <!-- relationship labels -->
+  <g fill="#222" font-size="12" text-anchor="middle">
+    <text x="270" y="160">RELEASED</text>
+    <text x="520" y="160">CONTAINS</text>
+    <text x="400" y="52">FEATURES</text>
+    <text x="55" y="60">INFLUENCED</text>
+    <text x="405" y="300" transform="rotate(-18 405 300)">LISTENED {plays, rating}</text>
+    <text x="150" y="285" text-anchor="start" dx="8">FOLLOWS</text>
+    <text x="650" y="285" text-anchor="start" dx="8">HAS_GENRE</text>
+  </g>
+</svg>
