@@ -288,8 +288,25 @@ ORDER BY hops, influenced;
 
 ### Evidências visuais
 
-Os prints do Neo4j Browser ficam em [`docs/img/`](docs/img/README.md). Para gerá-los, rode a
-Q10 (catálogo) e a Q4 (influências) e alterne para a visualização em grafo.
+Capturas reais do Neo4j Browser, geradas sobre o banco criado pelas migrations.
+
+**Catálogo (Q10):** 53 nós e 56 relacionamentos. Cada ramo é Artista → Álbum → Faixa → Gênero.
+
+![Catálogo no Neo4j Browser](docs/img/catalogo.png)
+
+**Influências (Q4):** o Pink Floyd influenciou Radiohead e Tame Impala.
+
+![Influências do Pink Floyd](docs/img/influencias.png)
+
+**Recomendação (Q3):** Ana e Felipe escutaram *Let It Happen*; Felipe e Diego avaliaram bem
+*Expresso 2222*, que a Ana ainda não ouviu. (Diego e Ana também escutaram *Get Lucky*.)
+
+![Caminho da recomendação para a Ana](docs/img/recomendacao.png)
+
+**Esquema (`db.schema.visualization()`):** além do domínio, aparecem os nós
+`__Neo4jMigration` e `__Neo4jMigrationsLock`, usados pela ferramenta de migrations.
+
+![Esquema do banco](docs/img/schema.png)
 
 ## 7. Troubleshooting
 

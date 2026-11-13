@@ -1,9 +1,8 @@
 # Prints do Neo4j Browser
 
-Coloque aqui as capturas de tela e referencie-as no README principal.
+Capturas usadas no README: `catalogo.png`, `influencias.png`, `recomendacao.png` e `schema.png`.
 
-Sugestões:
-
-1. `schema.png` - rode `CALL db.schema.visualization()` em http://localhost:7474.
-2. `catalogo.png` - rode a query Q10 de `queries/business_queries.cypher`.
-3. `influencias.png` - rode a Q4 e alterne para a visualização em grafo.
+Foram geradas automaticamente (Playwright + Chromium headless) contra o banco local
+criado pelas migrations. Para refazer manualmente, rode no Neo4j Browser
+(http://localhost:7474): a Q10 e a Q4 de `queries/business_queries.cypher`,
+`CALL db.schema.visualization()` e a variante em caminho da Q3 (`RETURN p`).
